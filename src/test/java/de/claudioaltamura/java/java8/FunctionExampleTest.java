@@ -1,10 +1,9 @@
 package de.claudioaltamura.java.java8;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.function.Function;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class FunctionExampleTest {
 
