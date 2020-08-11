@@ -1,6 +1,6 @@
 package de.claudioaltamura.java.java8;
 
-public class Person {
+class Person {
 
   String firstName;
 
