@@ -15,11 +15,11 @@ class SupplierExampleTest {
 
     assertThat(personSupplier.get()).isNotNull();
   }
+
   @Test
   void list() {
     Supplier<List<Person>> listSupplier = ArrayList::new;
 
     assertThat(listSupplier.get()).isNotNull();
   }
-
 }
