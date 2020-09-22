@@ -4,3 +4,11 @@
 
 # java-java8
 examples with Java 8 features
+
+* default interface
+* lambda expression
+* function
+* predicate
+* supplier
+* consumer
+* optional
