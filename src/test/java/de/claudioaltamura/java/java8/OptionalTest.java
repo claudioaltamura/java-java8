@@ -13,6 +13,8 @@ class OptionalTest {
     Optional<Person> person = Optional.of(new Person());
 
     assertThat(person.get()).isNotNull();
+
+    person.ifPresent(p -> System.out.println(p));
   }
 
   @Test
