@@ -14,7 +14,7 @@ class ReferencesExampleTest {
   }
 
   @Test
-  void construtorReference() {
+  void constructorReference() {
     Factory<Person> person = Person::new;
     assertThat(person).isNotNull();
   }
