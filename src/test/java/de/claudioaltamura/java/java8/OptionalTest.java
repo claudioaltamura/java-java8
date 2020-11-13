@@ -37,4 +37,25 @@ class OptionalTest {
 
     assertThrows(RuntimeException.class, () -> nullable.orElseThrow(RuntimeException::new));
   }
+
+  @Test
+  void map() {
+    Optional<Person> person = Optional.of(new Person("Peter", "Parker"));
+
+    String firstName = person.map(Person::getFirstName).orElse("default");
+
+    assertThat(firstName).isEqualTo("Peter");
+  }
+
+  @Test
+  void filter() {
+    Optional<Person> person = Optional.of(new Person("I have just a firstname",""));
+
+    String lastName = person.filter(p-> !"".equals(p.getLastName())).map(p->p.getLastName()).orElse("Unknown");
+
+    assertThat(lastName).isEqualTo("Unknown");
+
+  }
+
+
 }
