@@ -21,7 +21,6 @@ class StreamsCollectTest {
 
   @Test
   void set() {
-
     Set<String> languagesWithC =
         LanguageCollection.getLanguageCollection().stream()
             .filter(s -> s.startsWith("C"))
@@ -42,12 +41,21 @@ class StreamsCollectTest {
 
   @Test
   void collection() {
-    ArrayList<String> languagesWithLengthTwo =
+    List<String> languagesWithLengthTwo =
         LanguageCollection.getLanguageCollection().stream()
             .filter(s -> s.length() == 2)
             .collect(Collectors.toCollection(ArrayList::new));
 
-    assertThat(languagesWithLengthTwo).hasSize(1);
-    assertThat(languagesWithLengthTwo).contains("Go");
+    assertThat(languagesWithLengthTwo).hasSize(1).contains("Go");
+  }
+
+  @Test
+  void sorted() {
+    AnimalCollection animalCollection = new AnimalCollection();
+
+    List<String> sortedAnimals =
+        animalCollection.animals().stream().sorted().collect(Collectors.toList());
+
+    assertThat(sortedAnimals).isSortedAccordingTo(Comparator.naturalOrder());
   }
 }
