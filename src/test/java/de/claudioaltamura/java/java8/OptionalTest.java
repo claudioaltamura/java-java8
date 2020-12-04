@@ -49,13 +49,11 @@ class OptionalTest {
 
   @Test
   void filter() {
-    Optional<Person> person = Optional.of(new Person("I have just a firstname",""));
+    Optional<Person> person = Optional.of(new Person("I have just a firstname", ""));
 
-    String lastName = person.filter(p-> !"".equals(p.getLastName())).map(p->p.getLastName()).orElse("Unknown");
+    String lastName =
+        person.filter(p -> !"".equals(p.getLastName())).map(p -> p.getLastName()).orElse("Unknown");
 
     assertThat(lastName).isEqualTo("Unknown");
-
   }
-
-
 }
