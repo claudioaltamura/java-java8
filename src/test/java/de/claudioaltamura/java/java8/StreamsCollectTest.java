@@ -35,8 +35,7 @@ class StreamsCollectTest {
         LanguageCollection.getLanguageCollection().stream()
             .collect(Collectors.toMap(Function.identity(), String::length));
 
-    assertThat(languageLength).containsKey("Java");
-    assertThat(languageLength.get("Java")).isEqualTo(4);
+    assertThat(languageLength).containsEntry("Java",4);
   }
 
   @Test
