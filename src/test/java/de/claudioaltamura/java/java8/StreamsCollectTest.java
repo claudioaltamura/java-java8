@@ -35,7 +35,7 @@ class StreamsCollectTest {
         LanguageCollection.getLanguageCollection().stream()
             .collect(Collectors.toMap(Function.identity(), String::length));
 
-    assertThat(languageLength).containsEntry("Java",4);
+    assertThat(languageLength).containsEntry("Java", 4);
   }
 
   @Test
@@ -56,5 +56,24 @@ class StreamsCollectTest {
         animalCollection.animals().stream().sorted().collect(Collectors.toList());
 
     assertThat(sortedAnimals).isSortedAccordingTo(Comparator.naturalOrder());
+  }
+
+  @Test
+  void sortedComparator() {
+    AnimalCollection animalCollection = new AnimalCollection();
+
+    List<String> sortedAnimals =
+        animalCollection.animals().stream()
+            .sorted((a, b) -> b.compareTo(a))
+            .collect(Collectors.toList());
+
+    assertThat(sortedAnimals).isSortedAccordingTo(Comparator.reverseOrder());
+  }
+
+  @Test
+  void anyMatch() {
+    AnimalCollection animalCollection = new AnimalCollection();
+
+    assertThat(animalCollection.animals().stream().anyMatch(s -> s.startsWith("B"))).isTrue();
   }
 }
