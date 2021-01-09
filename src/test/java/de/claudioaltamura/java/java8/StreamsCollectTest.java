@@ -76,4 +76,11 @@ class StreamsCollectTest {
 
     assertThat(animalCollection.animals().stream().anyMatch(s -> s.startsWith("B"))).isTrue();
   }
+
+  @Test
+  void noneMatch() {
+    AnimalCollection animalCollection = new AnimalCollection();
+
+    assertThat(animalCollection.animals().stream().noneMatch(s -> s.contains("z"))).isTrue();
+  }
 }
