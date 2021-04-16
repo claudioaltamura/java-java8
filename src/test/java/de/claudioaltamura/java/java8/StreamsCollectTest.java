@@ -1,5 +1,7 @@
 package de.claudioaltamura.java.java8;
 
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.*;
@@ -82,5 +84,27 @@ class StreamsCollectTest {
     AnimalCollection animalCollection = new AnimalCollection();
 
     assertThat(animalCollection.animals().stream().noneMatch(s -> s.contains("z"))).isTrue();
+  }
+
+  @Test
+  void count() {
+    AnimalCollection animalCollection = new AnimalCollection();
+
+    assertThat(animalCollection.animals().stream()).size().isEqualTo(3);
+  }
+
+  @Test
+  void reduce() {
+    assertThat(
+            LanguageCollection.getLanguageCollection().stream().reduce((s1, s2) -> s1 + "/" + s2))
+        .contains("Java/C/C++/Go/JavaScript/Python/Scala");
+  }
+
+  @Test
+  void wordCount1() {
+    Map<String, Long> languagesCount =
+        LanguageCollection.getLanguageCollection().stream()
+            .collect(groupingBy(Function.identity(), counting()));
+    assertThat(languagesCount).containsEntry("Java", 1L);
   }
 }
