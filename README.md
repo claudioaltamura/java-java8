@@ -7,6 +7,7 @@ examples with Java 8 features
 
 * default interface
 * lambda expression
+* streams
 * function
 * predicate
 * supplier

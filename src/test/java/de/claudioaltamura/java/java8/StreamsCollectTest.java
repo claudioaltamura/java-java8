@@ -105,6 +105,18 @@ class StreamsCollectTest {
     Map<String, Long> languagesCount =
         LanguageCollection.getLanguageCollection().stream()
             .collect(groupingBy(Function.identity(), counting()));
+
     assertThat(languagesCount).containsEntry("Java", 1L);
+  }
+
+  @Test
+  void convert() {
+    AnimalCollection animalCollection = new AnimalCollection();
+    List<String> initials =
+        animalCollection.animals().stream()
+            .map(s -> s.substring(1, 2))
+            .collect(Collectors.toList());
+
+    assertThat(initials).containsExactly("e", "r", "n");
   }
 }
