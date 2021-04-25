@@ -15,6 +15,6 @@ class ComparatorTest {
     Person p1 = new Person("Peter", "Parker");
     Person p2 = new Person("Bruce", "Wayne");
 
-    assertThat(comparator.compare(p1, p2)).isGreaterThan(0);
+    assertThat(comparator.compare(p1, p2)).isPositive();
   }
 }

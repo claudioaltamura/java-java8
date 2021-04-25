@@ -8,7 +8,7 @@ class FunctionalInterfaceConverterTest {
 
   @Test
   void test() {
-    Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
+    Converter<String, Integer> converter = Integer::valueOf; //(from) -> Integer.valueOf(from)
 
     assertThat(converter.convert("123")).isEqualTo(123);
   }
