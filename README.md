@@ -13,3 +13,4 @@ examples with Java 8 features
 * supplier
 * consumer
 * optional
+* map
