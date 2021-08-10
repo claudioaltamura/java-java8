@@ -21,8 +21,7 @@ class MapTest {
 
   @Test
   void computeIfAbsent() {
-    Function<? super String, String> wurstFunction =
-        wurst -> wurst + "-" + UUID.randomUUID();
+    Function<? super String, String> wurstFunction = wurst -> wurst + "-" + UUID.randomUUID();
     assertThat(CountryFood.food().computeIfAbsent("wiener", wurstFunction))
         .isNotNull()
         .startsWith("wiener");
