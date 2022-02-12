@@ -20,3 +20,7 @@ gradle-app.setting
 /.idea/misc.xml
 /.idea/vcs.xml
 /.idea/
+/bin/
+/.classpath
+/.project
+/.settings/
