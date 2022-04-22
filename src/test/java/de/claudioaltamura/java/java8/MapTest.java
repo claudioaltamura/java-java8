@@ -16,7 +16,7 @@ class MapTest {
 
     assertThat(CountryFood.food().putIfAbsent("Italy", "Pizza")).isEqualTo("Pizza");
 
-    assertThat(CountryFood.food().putIfAbsent("Belgian", " Pommes frites")).isNull();
+    assertThat(CountryFood.food().putIfAbsent("Belgian", "Pommes frites")).isNull();
   }
 
   @Test
