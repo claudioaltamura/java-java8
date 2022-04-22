@@ -8,27 +8,26 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
 
 class StreamsCollectTest {
 
-	@Test
-	void filter() {
-		final List<Integer> integers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-				.skip(2).limit(3).collect(Collectors.toList());
-		assertThat(integers).containsExactly(3, 4, 5);
-	}
+  @Test
+  void filter() {
+    final List<Integer> integers =
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).skip(2).limit(3).collect(Collectors.toList());
+    assertThat(integers).containsExactly(3, 4, 5);
+  }
 
-	@Test
-	void filterOnlyIfNotEmpty() {
-		final String searchString = "J";
-		List<String> languagesWithJ =
-				LanguageCollection.getLanguageCollection().stream()
-						.filter(s -> "".equals(searchString) || s.startsWith(searchString))
-						.collect(Collectors.toList());
-		assertThat(languagesWithJ).containsExactly("Java", "JavaScript");
-	}
+  @Test
+  void filterOnlyIfNotEmpty() {
+    final String searchString = "J";
+    List<String> languagesWithJ =
+        LanguageCollection.getLanguageCollection().stream()
+            .filter(s -> "".equals(searchString) || s.startsWith(searchString))
+            .collect(Collectors.toList());
+    assertThat(languagesWithJ).containsExactly("Java", "JavaScript");
+  }
 
   @Test
   void list() {
