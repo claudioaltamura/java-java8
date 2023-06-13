@@ -5,14 +5,13 @@ import java.time.ZoneId;
 
 class LocalTimeExample {
 
-    private LocalTimeExample(){}
+  private LocalTimeExample() {}
 
-    static LocalTime of() {
-        return LocalTime.of(10, 10);
-    }
+  static LocalTime of() {
+    return LocalTime.of(10, 10);
+  }
 
-    static LocalTime now() {
-        return LocalTime.now(ZoneId.of("Europe/Berlin"));
-    }
-
+  static LocalTime now() {
+    return LocalTime.now(ZoneId.of("Europe/Berlin"));
+  }
 }

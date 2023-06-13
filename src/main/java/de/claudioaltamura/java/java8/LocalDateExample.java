@@ -6,14 +6,13 @@ import java.time.ZoneId;
 
 class LocalDateExample {
 
-    private LocalDateExample(){}
+  private LocalDateExample() {}
 
-    static LocalDate of() {
-        return LocalDate.of(1970, Month.JANUARY, 1);
-    }
+  static LocalDate of() {
+    return LocalDate.of(1970, Month.JANUARY, 1);
+  }
 
-    static LocalDate now() {
-        return LocalDate.now(ZoneId.of("Europe/Berlin"));
-    }
-
+  static LocalDate now() {
+    return LocalDate.now(ZoneId.of("Europe/Berlin"));
+  }
 }

@@ -14,3 +14,4 @@ examples with Java 8 features
 * consumer
 * optional
 * map
+* Date
